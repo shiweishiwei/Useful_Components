@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import React from 'react';
 import ComponentSelect from './Components/ComponentSelect';
+import ComponentTable from './Components/ComponentTable';
 import './App.css';
 import { Row, Col } from 'antd';
 import 'antd/dist/antd.css';
@@ -8,7 +9,7 @@ import 'antd/dist/antd.css';
 function App() {
   const [selecttitle, setSelecttitle] = useState("现在选择的是：")
   const handleSelectChange = function (str) {
-    setSelecttitle(`现在选择的是：${str||''}`)
+    setSelecttitle(`现在选择的是：${str || ''}`)
   }
   return (
     <React.Fragment>
@@ -19,6 +20,9 @@ function App() {
         <Col span={8}>
           <ComponentSelect options={['小明', '小红', '小绿']} allowClear={true} placeholder="请选择" mpde="tags" onChange={handleSelectChange} />
         </Col>
+      </Row>
+      <Row>
+        <ComponentTable />
       </Row>
     </React.Fragment>
   )
